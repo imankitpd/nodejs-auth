@@ -1,22 +1,24 @@
 const express = require('express');
-const fs = require('fs');
+const bodyParser = require('body-parser')
+
+const {mongoose} = require('./db/mongoose');
+const {Todo} = require('./models/todo');
+const {User} = require('./models/user')
 
 var app = express();
 
-app.use(express.static(__dirname + '/public'));
-app.use((req, res, next) => {
-    var now = new Date().toString();
-    var log = `${now}: ${req.method}: ${req.url}`;
+app.use(bodyParser.json());
 
-    console.log(log);
-    fs.appendFile('server.log', log + '\n', (err) => {
-        console.log('unable to append in server.log');
+app.post('/todos', (req, res) => {
+    var todo = new Todo({
+        text: req.body.text
     });
-    next();
-});
 
-app.get('/', (req, res) => {
-    res.send('<h1>Hello Express!</h1>');
+    todo.save().then((doc) => {
+        res.send(doc);
+    }, (e) => {
+        res.status(400).send(e);
+    });
 });
 
 app.listen(3000, () => {
