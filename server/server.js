@@ -116,4 +116,17 @@ app.listen(3000, () => {
     console.log('Listening at Port 3000');
 });
 
+app.post('/users/login', (req, res) => {
+    var body = _.pick(req.body, ['email', 'password']);
+
+    User.findByCredentials(body.email, body.password).then((user)=> {
+        res.send(user);
+        // return user .generateAuthTOken().then((token) => { // video 95
+        //     res.header('x-auth', token).send(user);
+        // });        
+    }).catch((e) => {
+        res.status(400).send();
+    });
+});
+
 module.exports = {app};
