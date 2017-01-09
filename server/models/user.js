@@ -5,6 +5,18 @@ const _ = require('lodash');
 const bcrypt = require('bcryptjs');
 
 var UserSchema = mongoose.Schema({
+    first_name: {
+        type: String,
+        required: true,
+        trim: true,
+        minlength: 1
+    },
+    last_name: {
+        type: String,
+        required: true,
+        trim: true,
+        minlength: 1
+    },
     email: {
         type: String,
         required: true,
