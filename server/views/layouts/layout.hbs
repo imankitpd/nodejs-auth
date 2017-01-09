@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+
+    <head>
+        <meta charset="utf-8">
+        <title>{{title}}</title>
+        <!-- Latest compiled and minified CSS -->
+        <link rel="stylesheet" href="/css/bootstrap.min.css">
+        <link rel="stylesheet" href="/css/styles.css">
+    </head>
+
+    <body>
+        <div class="container top-margin">
+            <div class="row">
+                <div class="col-md-8 col-md-offset-2">
+                    <div class="top">
+                        <ul class="nav nav-pills">
+                            <li role="presentation" class="{{#if index}}active{{/if}}"><a href="/">Home</a></li>
+                            <li role="presentation" class="{{#if about_us}}active{{/if}}"><a href="/about-us">About us</a></li>
+                            <li role="presentation" class="{{#if contact_us}}active{{/if}}"><a href="/contact-us">Contact us</a></li>
+                        </ul>
+                    </div>
+                    <hr>
+                    {{{body}}}
+                </div>                 
+            </div>                    
+            </div>                
+        </div>
+
+        <script src="/js/libs/jquery-3.1.1.min.js"></script>
+        <script src="/js/libs/bootstrap.min.js"></script>
+        <script src="/js/libs/jquery.validate.min.js"></script>
+        <script src="/js/libs/bootbox.min.js"></script>
+        <script src="/js/utils.js"></script>
+        {{#if index}}
+        <script src="/js/index.js"></script>
+        {{/if}}
+        {{#if home}}
+        <script src="/js/home.js"></script>
+        {{/if}}
+        
+    </body>
+
+</html>
