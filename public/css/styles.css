@@ -18,3 +18,7 @@ label.error  {
     color: red;
     font-weight: normal;
 }
+
+ol.event-ol li a {
+    margin-right: 5px;
+}

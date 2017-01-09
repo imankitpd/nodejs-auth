@@ -1,5 +1,6 @@
 const express = require('express');
 const _ = require('lodash');
+const {ObjectID} = require('mongodb');
 
 const router = express.Router();
 
@@ -62,7 +63,9 @@ router.delete('/:id', (req, res) => {
             return res.status(404).send();
         }
 
-        res.send(event);
+        res.json({
+            success: true
+        });
     }).catch((e) => {
         res.status(400).send();
     });
