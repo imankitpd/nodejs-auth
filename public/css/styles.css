@@ -22,3 +22,6 @@ label.error  {
 ol.event-ol li a {
     margin-right: 5px;
 }
+.form-hide, li.logout {
+    display: none;
+}

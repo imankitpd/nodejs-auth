@@ -22,11 +22,4 @@ router.get('/contact-us', (req, res) => {
     });
 });
 
-router.get('/home', (req, res) => {
-    res.render('home', {
-        title: 'Event Management',
-        home: true
-    });
-});
-
 module.exports = router;
