@@ -22,3 +22,7 @@ var Event = mongoose.model('Event', {
 });
 
 module.exports = {Event};
+
+
+// remove completedAt 
+// Add location, Date & time, Description

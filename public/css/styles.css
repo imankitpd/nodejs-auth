@@ -1,3 +1,7 @@
+.jumbotron {
+    color: #ffffff;
+    background: #337ab7;
+}
 .heading {
     background: #594080;
 }
@@ -24,4 +28,11 @@ ol.event-ol li a {
 }
 .form-hide, li.logout {
     display: none;
+}
+
+.footer-height {
+    height: 100px;
+}
+.copyright {
+    text-align: center;
 }
