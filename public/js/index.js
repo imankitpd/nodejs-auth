@@ -139,7 +139,7 @@
     var eventId = null;
     var resetForm = function () {
         $('#text_title').text('Add Event');
-        $('#event_form').reset();
+        $('#event_form')[0].reset();
         eventId = null;
     };
 
